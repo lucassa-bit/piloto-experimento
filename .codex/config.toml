@@ -1,0 +1,7 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+model_verbosity = "medium"
+web_search = "disabled"
+history.persistence = "none"
+memories.generate_memories = false
+memories.use_memories = false

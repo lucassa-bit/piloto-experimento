@@ -1,0 +1,13 @@
+{
+  "run_id": "US08_CS_R2",
+  "user_story_id": "US08",
+  "condition": "CS",
+  "repetition": 2,
+  "baseline_source": "baselines/US08/spec.md",
+  "baseline_sha256": "427e858ff781a8a8375a37eedbdaa6ecef127a821c7f2809265ef3116d547a84",
+  "user_story_source": "materials/US08/user-story.md",
+  "user_story_sha256": "75eafb62a6439e030cf20c5757a69b9d336bd055d675ed00c4ad6d3a8a88fc0e",
+  "context_source": "materials/US08/systemic.md",
+  "context_sha256": "8afeee46857128185fc8a6788b1f242663c18c9a8125267d116c8c7d24a5d0e9",
+  "scaffolded_at": "2026-09-23T12:33:35-03:00"
+}

@@ -1,0 +1,2 @@
+"run_id","user_story_id","condition","repetition","attempt","technical_status","parse_status","clarification_status","question_count"
+"SMOKE_C0_R1","SMOKE","C0","1","1","TECHNICAL_SUCCESS","PARSE_OK","HAS_QUESTIONS","4"

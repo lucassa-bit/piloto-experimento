@@ -1,0 +1,15 @@
+US_ID: US02
+Model: gpt-5.5
+Reasoning effort: medium
+Codex version: codex-cli 0.156.1
+Specify version: specify 1.0.10
+Sandbox: workspace-write
+Source user story: /home/lucassa-bit/Documentos/experimento-piloto/materials/US02/user-story.md
+Generated spec path: /home/lucassa-bit/Documentos/experimento-piloto/baselines/US02/generation/feature/spec.md
+Baseline output path: /home/lucassa-bit/Documentos/experimento-piloto/baselines/US02/spec.md
+User story sha256: 5e1b66dfeb18e52708677fbf0404808e0383a3045300cb4a387e9c5981b2ace6
+Baseline spec sha256: ee9291c398af0edfda42b8420017355a54df2a71ed3ae1aac38fb014a169a4aa
+Exit code: 0
+Start: 2026-09-23T12:18:21-03:00
+End: 2026-09-23T12:19:27-03:00
+Status: Valid

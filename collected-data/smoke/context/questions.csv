@@ -1,0 +1,4 @@
+"run_id","user_story_id","condition","repetition","attempt","question_order","question_text_raw","source_file"
+"SMOKE_CTX_R1","SMOKE","CL","1","1","1","[NEEDS CLARIFICATION] Should the watermark code be shown only on the printed packing slip, only on the on-screen preview, or both?","last-message.txt"
+"SMOKE_CTX_R1","SMOKE","CL","1","1","2","[NEEDS CLARIFICATION] How should the system behave when a clerk attempts to reprint a packing slip more than twice for the same order?","last-message.txt"
+"SMOKE_CTX_R1","SMOKE","CL","1","1","3","[NEEDS CLARIFICATION] How should the night-shift station desk rule be applied: restrict printing to station D14, label slips printed by night-shift clerks with D14, or something else?","last-message.txt"

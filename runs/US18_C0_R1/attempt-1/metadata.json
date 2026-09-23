@@ -1,0 +1,38 @@
+{
+  "exit_code": 0,
+  "stdout_path": "/home/lucassa-bit/Documentos/experimento-piloto/runs/US18_C0_R1/attempt-1/stdout.jsonl",
+  "stderr_path": "/home/lucassa-bit/Documentos/experimento-piloto/runs/US18_C0_R1/attempt-1/stderr.txt",
+  "last_message_path": "/home/lucassa-bit/Documentos/experimento-piloto/runs/US18_C0_R1/attempt-1/last-message.txt",
+  "started_at": "2026-09-23T16:53:00-03:00",
+  "finished_at": "2026-09-23T16:53:18-03:00",
+  "attempt": 1,
+  "model": "gpt-5.5",
+  "reasoning_effort": "medium",
+  "sandbox": "read-only",
+  "workdir": "/home/lucassa-bit/Documentos/experimento-piloto/runs/US18_C0_R1",
+  "command": [
+    "/home/lucassa-bit/.local/bin/codex",
+    "--ask-for-approval",
+    "never",
+    "exec",
+    "--model",
+    "gpt-5.5",
+    "-c",
+    "model_reasoning_effort=medium",
+    "--cd",
+    "/home/lucassa-bit/Documentos/experimento-piloto/runs/US18_C0_R1",
+    "--json",
+    "--output-last-message",
+    "/home/lucassa-bit/Documentos/experimento-piloto/runs/US18_C0_R1/attempt-1/last-message.txt",
+    "--sandbox",
+    "read-only",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "-"
+  ],
+  "env_overrides": {
+    "SPECIFY_FEATURE_DIRECTORY": "runs/US18_C0_R1"
+  },
+  "approval_policy": "never",
+  "sandbox_requested": "read-only"
+}

@@ -1,0 +1,25 @@
+{
+  "user_story_id": "US08",
+  "model": "gpt-5.5",
+  "reasoning_effort": "medium",
+  "codex_version": "codex-cli 0.156.1",
+  "specify_version": "specify 1.0.10",
+  "sandbox": "workspace-write",
+  "started_at": "2026-09-23T12:21:34-03:00",
+  "finished_at": "2026-09-23T12:22:45-03:00",
+  "exit_code": 0,
+  "source_user_story": "/home/lucassa-bit/Documentos/experimento-piloto/materials/US08/user-story.md",
+  "generated_spec_path": "/home/lucassa-bit/Documentos/experimento-piloto/baselines/US08/generation/feature/spec.md",
+  "baseline_output_path": "/home/lucassa-bit/Documentos/experimento-piloto/baselines/US08/spec.md",
+  "user_story_sha256": "75eafb62a6439e030cf20c5757a69b9d336bd055d675ed00c4ad6d3a8a88fc0e",
+  "baseline_spec_sha256": "427e858ff781a8a8375a37eedbdaa6ecef127a821c7f2809265ef3116d547a84",
+  "context_files_used": [],
+  "inputs_allowed": [
+    "user-story.md"
+  ],
+  "stdout_path": "/home/lucassa-bit/Documentos/experimento-piloto/baselines/US08/generation/attempt-1/stdout.jsonl",
+  "stderr_path": "/home/lucassa-bit/Documentos/experimento-piloto/baselines/US08/generation/attempt-1/stderr.txt",
+  "last_message_path": "/home/lucassa-bit/Documentos/experimento-piloto/baselines/US08/generation/attempt-1/last-message.txt",
+  "attempt": 1,
+  "checklist_path": "/home/lucassa-bit/Documentos/experimento-piloto/baselines/US08/checklists/requirements.md"
+}

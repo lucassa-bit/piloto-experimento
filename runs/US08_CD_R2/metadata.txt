@@ -1,0 +1,26 @@
+Run_ID: US08_CD_R2
+US_ID: US08
+Condition: CD
+Repetition: 2
+Attempt: 1
+Ordem: 29
+Model: gpt-5.5
+Reasoning effort: medium
+Codex version: codex-cli 0.156.1
+Specify version: specify 1.0.10
+Sandbox: read-only
+Approval policy: never
+Shuffle: off
+Start: 2026-09-23T16:50:02-03:00
+End: 2026-09-23T16:50:22-03:00
+Exit code: 0
+Run path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US08_CD_R2
+SPECIFY_FEATURE_DIRECTORY: runs/US08_CD_R2
+spec_sha256_before: 427e858ff781a8a8375a37eedbdaa6ecef127a821c7f2809265ef3116d547a84
+spec_sha256_after: 427e858ff781a8a8375a37eedbdaa6ecef127a821c7f2809265ef3116d547a84
+context_sha256: 2282cb147b59ac774bdfc68e7b36eb163cb7fcc71e63a9c83bc04182103152bf
+Stdout path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US08_CD_R2/attempt-1/stdout.jsonl
+Stderr path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US08_CD_R2/attempt-1/stderr.txt
+Last message path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US08_CD_R2/attempt-1/last-message.txt
+Clarification full path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US08_CD_R2/clarification-full.md
+Status: Valid

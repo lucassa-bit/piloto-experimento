@@ -1,0 +1,41 @@
+$speckit-clarify Experimental collection mode.
+
+This is exactly one non-interactive clarification invocation for an experimental condition.
+
+Use only:
+- the current spec.md already present in this run folder (SPECIFY_FEATURE_DIRECTORY);
+- ./experiment-input/user-story.md;
+- ./experiment-input/context.md, if and only if that file already exists on disk.
+
+Treat ./experiment-input/context.md as the only additional context available for this experimental condition.
+If ./experiment-input/context.md does not exist, treat the User Story as having no additional context.
+Do not create context.md. Do not synthesize an empty context. Do not invent a condition label.
+
+Do not read:
+- PRR / spreadsheet / Gap IDs / Ref IDs;
+- manifest.csv / runs.csv / matrices;
+- materials/, baselines/, or any other run folder;
+- prior session outputs.
+
+Audit-only rules for this run:
+- Invoke $speckit-clarify exactly once.
+- Produce clarification questions only (or state that none are needed).
+- Do not answer the clarification questions.
+- Do not simulate user replies.
+- Do not resolve missing information.
+- Do not invent missing answers.
+- Do not infer missing answers from outside the provided files.
+- Do not use web search.
+- Do not use prior session outputs or other runs.
+- Do not modify User Story files, context materials, or any PRR/reference sources.
+- Do not modify spec.md (no Clarifications section, no Q→A encoding, no edits of any kind).
+- Do not modify checklists.
+- Do not proceed to $speckit-plan, $speckit-tasks, $speckit-implement, or any later workflow step.
+- Do not create implementation plans, tasks, or code.
+
+Return only the clarification output in a single response.
+Do not induce a fixed quantity, theme, or category of questions beyond what the ambiguity scan warrants.
+Produce at most five prioritized clarification questions when questions are needed.
+Each unresolved question must be explicitly marked with [NEEDS CLARIFICATION].
+If no clarification is needed, write NO_CLARIFICATION_NEEDED.
+Then stop.

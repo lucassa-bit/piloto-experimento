@@ -1,0 +1,29 @@
+$speckit-specify Baseline generation mode.
+
+Create the feature specification for one experimental User Story.
+
+SPECIFY_FEATURE_DIRECTORY={{FEATURE_DIRECTORY}}
+
+Feature description:
+{{USER_STORY}}
+
+Rules for this experimental baseline:
+- Use SPECIFY_FEATURE_DIRECTORY exactly as given above ({{FEATURE_DIRECTORY}}).
+- Do not auto-create a directory under specs/.
+- Do not create or switch git branches.
+- Do not update `.specify/feature.json`.
+- Follow the $speckit-specify workflow inside SPECIFY_FEATURE_DIRECTORY only: write spec.md and checklists/requirements.md there.
+- Use only the Feature description text above (the User Story body).
+- Ignore provenance metadata if present in any surrounding files.
+- Do not read, open, or use materials context files: lexical.md, operational.md, decisional.md, systemic.md, total.md, or user-story-original.md.
+- Do not use PRR, manifest, other User Stories, or outputs from other runs.
+- Do not run $speckit-clarify, $speckit-plan, $speckit-tasks, or $speckit-implement.
+- Do not wait for operator answers. If something is unspecified, make an informed guess, document it in Assumptions, and continue.
+- Keep at most three [NEEDS CLARIFICATION] markers, and only when no reasonable default exists.
+- This command must write files under SPECIFY_FEATURE_DIRECTORY. Audit-only / no-mutation constitution rules apply to later $speckit-clarify collection runs, not to this baseline generation.
+- Do not use web search.
+- Do not modify materials/ or any User Story source file.
+- Write exactly these two files and nothing else:
+  - {{FEATURE_DIRECTORY}}/spec.md
+  - {{FEATURE_DIRECTORY}}/checklists/requirements.md
+- After writing the files, return only a short completion report with the two paths.

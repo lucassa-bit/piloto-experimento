@@ -1,0 +1,1 @@
+1. [NEEDS CLARIFICATION] How should the system identify “the same join attempt” to prevent duplicate participant entries: same browser/session, same entered name within the same game, or another identifier?

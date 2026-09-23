@@ -1,0 +1,26 @@
+Run_ID: US25_CL_R1
+US_ID: US25
+Condition: CL
+Repetition: 1
+Attempt: 1
+Ordem: 58
+Model: gpt-5.5
+Reasoning effort: medium
+Codex version: codex-cli 0.156.1
+Specify version: specify 1.0.10
+Sandbox: read-only
+Approval policy: never
+Shuffle: off
+Start: 2026-09-23T16:59:49-03:00
+End: 2026-09-23T17:00:10-03:00
+Exit code: 0
+Run path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US25_CL_R1
+SPECIFY_FEATURE_DIRECTORY: runs/US25_CL_R1
+spec_sha256_before: 0d14d17c97bccc0deb8b78229be963b75293139e7dc6aed59c0c1ef1bf118c8a
+spec_sha256_after: 0d14d17c97bccc0deb8b78229be963b75293139e7dc6aed59c0c1ef1bf118c8a
+context_sha256: 7e7fc814ec5b5b281cb32c6e25a8bf5b0f4ba9a850ac58aee36054a6939b8226
+Stdout path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US25_CL_R1/attempt-1/stdout.jsonl
+Stderr path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US25_CL_R1/attempt-1/stderr.txt
+Last message path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US25_CL_R1/attempt-1/last-message.txt
+Clarification full path: /home/lucassa-bit/Documentos/experimento-piloto/runs/US25_CL_R1/clarification-full.md
+Status: Valid

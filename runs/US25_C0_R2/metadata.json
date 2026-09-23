@@ -1,0 +1,13 @@
+{
+  "run_id": "US25_C0_R2",
+  "user_story_id": "US25",
+  "condition": "C0",
+  "repetition": 2,
+  "baseline_source": "baselines/US25/spec.md",
+  "baseline_sha256": "0d14d17c97bccc0deb8b78229be963b75293139e7dc6aed59c0c1ef1bf118c8a",
+  "user_story_source": "materials/US25/user-story.md",
+  "user_story_sha256": "7d2f83b698f1f354eeaba4d183c25970f08d9aae78d2fcb1fb38b4e69fd172b0",
+  "context_source": null,
+  "context_sha256": null,
+  "scaffolded_at": "2026-09-23T12:33:35-03:00"
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "US18_CS_R3",
+  "user_story_id": "US18",
+  "condition": "CS",
+  "repetition": 3,
+  "baseline_source": "baselines/US18/spec.md",
+  "baseline_sha256": "55f45f8e5811dc7b29d226fcb5945cd57814d3eb0b90e38a3a9921778ea13eaa",
+  "user_story_source": "materials/US18/user-story.md",
+  "user_story_sha256": "004c1a82fc6d2148008f634f1f23c4d96e06252b2327aec8d495612430fb2a5f",
+  "context_source": "materials/US18/systemic.md",
+  "context_sha256": "59633699d003789543eb26a7e93d378fc878875d7cbe23cb9207116afa7f6486",
+  "scaffolded_at": "2026-09-23T12:33:35-03:00"
+}

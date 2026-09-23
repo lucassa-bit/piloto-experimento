@@ -1,0 +1,5 @@
+Completed baseline generation.
+
+Wrote:
+- `baselines/US25/generation/feature/spec.md`
+- `baselines/US25/generation/feature/checklists/requirements.md`

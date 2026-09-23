@@ -1,0 +1,1 @@
+1. [NEEDS CLARIFICATION] What message or user action should be provided when the ZIP geocoding service or facility registry is temporarily unavailable?

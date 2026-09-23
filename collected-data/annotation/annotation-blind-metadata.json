@@ -1,0 +1,7 @@
+{
+  "annotation_order_seed": "piloto-annotation-order-v1-20260923",
+  "annotation_order_seed_sha256": "8827251fa9a947db297473c58cbb64bf243865a18b040506a1f1202dbce7cc4d",
+  "blind_item_count": 269,
+  "calibration_item_count": 30,
+  "notes": "annotation_order_seed is exclusive to annotation presentation. Never use it in experimental Spec Kit / Codex runs. blind-id-map.csv is private — do not give to evaluators during mapping. Calibration mappings must not be copied into the final annotation."
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "US02_C0_R2",
+  "user_story_id": "US02",
+  "condition": "C0",
+  "repetition": 2,
+  "baseline_source": "baselines/US02/spec.md",
+  "baseline_sha256": "ee9291c398af0edfda42b8420017355a54df2a71ed3ae1aac38fb014a169a4aa",
+  "user_story_source": "materials/US02/user-story.md",
+  "user_story_sha256": "5e1b66dfeb18e52708677fbf0404808e0383a3045300cb4a387e9c5981b2ace6",
+  "context_source": null,
+  "context_sha256": null,
+  "scaffolded_at": "2026-09-23T12:33:35-03:00"
+}

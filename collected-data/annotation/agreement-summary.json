@@ -1,0 +1,21 @@
+{
+  "items": 269,
+  "segments_evaluator_1": 269,
+  "segments_evaluator_2": 269,
+  "annotated_items_evaluator_1": 0,
+  "annotated_items_evaluator_2": 0,
+  "annotated_segments_evaluator_1": 0,
+  "annotated_segments_evaluator_2": 0,
+  "segmentation_agreement_count": 269,
+  "segmentation_agreement_rate": 1.0,
+  "mapping_status_pairs_compared": 0,
+  "mapping_status_exact_agreement_count": 0,
+  "mapping_status_exact_agreement_rate": null,
+  "mapping_status_cohens_kappa": null,
+  "mapped_gap_id_pairs_compared": 0,
+  "mapped_gap_id_exact_agreement_count": 0,
+  "mapped_gap_id_exact_agreement_rate": null,
+  "mapped_gap_id_cohens_kappa": null,
+  "disagreement_rows": 0,
+  "scope_note": "If comparing calibration sheets, metrics are diagnostic only (not final study reliability)."
+}

@@ -1,0 +1,1 @@
+1. [NEEDS CLARIFICATION] Are estimators themselves also considered participants/viewers who must be prevented from seeing any estimates before the simultaneous reveal, or does this visibility rule apply only to non-estimating participants?

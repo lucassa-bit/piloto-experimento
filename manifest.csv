@@ -1,0 +1,253 @@
+user_story_id,condition,gap_id,ref_id,category,importance,gap_state,reference_information
+US02,C0,G01,L01,Léxica,Necessária,Open,Uma recycling facility é um local físico que recebe materiais recicláveis entregues por usuários.
+US02,C0,G02,O01,Operacional,Necessária,Open,O sistema aceita ZIP de 5 dígitos e ZIP+4.
+US02,C0,G03,O02,Operacional,Necessária,Open,Uma instalação é considerada próxima quando está a até 25 km da região correspondente ao ZIP informado.
+US02,C0,G04,O03,Operacional,Necessária,Open,A busca não é executada e o usuário recebe uma mensagem informando que o ZIP não pôde ser reconhecido.
+US02,C0,G05,O04,Operacional,Necessária,Open,Apenas instalações com cadastro ativo e verificado podem aparecer nos resultados.
+US02,C0,G06,O05,Operacional,Necessária,Open,"Cada resultado apresenta nome, endereço, distância e tipos de materiais aceitos."
+US02,C0,G07,O06,Operacional,Complementar,Open,"As instalações são ordenadas pela distância, da mais próxima para a mais distante."
+US02,C0,G08,S01,Sistêmica,Necessária,Open,O ZIP é convertido em uma localização geográfica por um serviço de geocodificação utilizado pelo sistema.
+US02,C0,G09,S02,Sistêmica,Necessária,Open,As instalações são obtidas do cadastro de instalações mantido pela plataforma.
+US02,C0,G10,D01,Decisória,Complementar,Open,Foi decidido utilizar ZIP informado manualmente e não exigir acesso à localização do dispositivo.
+US02,C0,G11,O07,Operacional,Necessária,Open,O sistema informa que nenhuma instalação próxima foi encontrada e não amplia automaticamente o raio da busca.
+US02,CL,G01,L01,Léxica,Necessária,Answered,Uma recycling facility é um local físico que recebe materiais recicláveis entregues por usuários.
+US02,CL,G02,O01,Operacional,Necessária,Open,O sistema aceita ZIP de 5 dígitos e ZIP+4.
+US02,CL,G03,O02,Operacional,Necessária,Open,Uma instalação é considerada próxima quando está a até 25 km da região correspondente ao ZIP informado.
+US02,CL,G04,O03,Operacional,Necessária,Open,A busca não é executada e o usuário recebe uma mensagem informando que o ZIP não pôde ser reconhecido.
+US02,CL,G05,O04,Operacional,Necessária,Open,Apenas instalações com cadastro ativo e verificado podem aparecer nos resultados.
+US02,CL,G06,O05,Operacional,Necessária,Open,"Cada resultado apresenta nome, endereço, distância e tipos de materiais aceitos."
+US02,CL,G07,O06,Operacional,Complementar,Open,"As instalações são ordenadas pela distância, da mais próxima para a mais distante."
+US02,CL,G08,S01,Sistêmica,Necessária,Open,O ZIP é convertido em uma localização geográfica por um serviço de geocodificação utilizado pelo sistema.
+US02,CL,G09,S02,Sistêmica,Necessária,Open,As instalações são obtidas do cadastro de instalações mantido pela plataforma.
+US02,CL,G10,D01,Decisória,Complementar,Open,Foi decidido utilizar ZIP informado manualmente e não exigir acesso à localização do dispositivo.
+US02,CL,G11,O07,Operacional,Necessária,Open,O sistema informa que nenhuma instalação próxima foi encontrada e não amplia automaticamente o raio da busca.
+US02,CO,G01,L01,Léxica,Necessária,Open,Uma recycling facility é um local físico que recebe materiais recicláveis entregues por usuários.
+US02,CO,G02,O01,Operacional,Necessária,Answered,O sistema aceita ZIP de 5 dígitos e ZIP+4.
+US02,CO,G03,O02,Operacional,Necessária,Answered,Uma instalação é considerada próxima quando está a até 25 km da região correspondente ao ZIP informado.
+US02,CO,G04,O03,Operacional,Necessária,Answered,A busca não é executada e o usuário recebe uma mensagem informando que o ZIP não pôde ser reconhecido.
+US02,CO,G05,O04,Operacional,Necessária,Answered,Apenas instalações com cadastro ativo e verificado podem aparecer nos resultados.
+US02,CO,G06,O05,Operacional,Necessária,Answered,"Cada resultado apresenta nome, endereço, distância e tipos de materiais aceitos."
+US02,CO,G07,O06,Operacional,Complementar,Answered,"As instalações são ordenadas pela distância, da mais próxima para a mais distante."
+US02,CO,G08,S01,Sistêmica,Necessária,Open,O ZIP é convertido em uma localização geográfica por um serviço de geocodificação utilizado pelo sistema.
+US02,CO,G09,S02,Sistêmica,Necessária,Open,As instalações são obtidas do cadastro de instalações mantido pela plataforma.
+US02,CO,G10,D01,Decisória,Complementar,Open,Foi decidido utilizar ZIP informado manualmente e não exigir acesso à localização do dispositivo.
+US02,CO,G11,O07,Operacional,Necessária,Answered,O sistema informa que nenhuma instalação próxima foi encontrada e não amplia automaticamente o raio da busca.
+US02,CD,G01,L01,Léxica,Necessária,Open,Uma recycling facility é um local físico que recebe materiais recicláveis entregues por usuários.
+US02,CD,G02,O01,Operacional,Necessária,Open,O sistema aceita ZIP de 5 dígitos e ZIP+4.
+US02,CD,G03,O02,Operacional,Necessária,Open,Uma instalação é considerada próxima quando está a até 25 km da região correspondente ao ZIP informado.
+US02,CD,G04,O03,Operacional,Necessária,Open,A busca não é executada e o usuário recebe uma mensagem informando que o ZIP não pôde ser reconhecido.
+US02,CD,G05,O04,Operacional,Necessária,Open,Apenas instalações com cadastro ativo e verificado podem aparecer nos resultados.
+US02,CD,G06,O05,Operacional,Necessária,Open,"Cada resultado apresenta nome, endereço, distância e tipos de materiais aceitos."
+US02,CD,G07,O06,Operacional,Complementar,Open,"As instalações são ordenadas pela distância, da mais próxima para a mais distante."
+US02,CD,G08,S01,Sistêmica,Necessária,Open,O ZIP é convertido em uma localização geográfica por um serviço de geocodificação utilizado pelo sistema.
+US02,CD,G09,S02,Sistêmica,Necessária,Open,As instalações são obtidas do cadastro de instalações mantido pela plataforma.
+US02,CD,G10,D01,Decisória,Complementar,Answered,Foi decidido utilizar ZIP informado manualmente e não exigir acesso à localização do dispositivo.
+US02,CD,G11,O07,Operacional,Necessária,Open,O sistema informa que nenhuma instalação próxima foi encontrada e não amplia automaticamente o raio da busca.
+US02,CS,G01,L01,Léxica,Necessária,Open,Uma recycling facility é um local físico que recebe materiais recicláveis entregues por usuários.
+US02,CS,G02,O01,Operacional,Necessária,Open,O sistema aceita ZIP de 5 dígitos e ZIP+4.
+US02,CS,G03,O02,Operacional,Necessária,Open,Uma instalação é considerada próxima quando está a até 25 km da região correspondente ao ZIP informado.
+US02,CS,G04,O03,Operacional,Necessária,Open,A busca não é executada e o usuário recebe uma mensagem informando que o ZIP não pôde ser reconhecido.
+US02,CS,G05,O04,Operacional,Necessária,Open,Apenas instalações com cadastro ativo e verificado podem aparecer nos resultados.
+US02,CS,G06,O05,Operacional,Necessária,Open,"Cada resultado apresenta nome, endereço, distância e tipos de materiais aceitos."
+US02,CS,G07,O06,Operacional,Complementar,Open,"As instalações são ordenadas pela distância, da mais próxima para a mais distante."
+US02,CS,G08,S01,Sistêmica,Necessária,Answered,O ZIP é convertido em uma localização geográfica por um serviço de geocodificação utilizado pelo sistema.
+US02,CS,G09,S02,Sistêmica,Necessária,Answered,As instalações são obtidas do cadastro de instalações mantido pela plataforma.
+US02,CS,G10,D01,Decisória,Complementar,Open,Foi decidido utilizar ZIP informado manualmente e não exigir acesso à localização do dispositivo.
+US02,CS,G11,O07,Operacional,Necessária,Open,O sistema informa que nenhuma instalação próxima foi encontrada e não amplia automaticamente o raio da busca.
+US02,CT,G01,L01,Léxica,Necessária,Answered,Uma recycling facility é um local físico que recebe materiais recicláveis entregues por usuários.
+US02,CT,G02,O01,Operacional,Necessária,Answered,O sistema aceita ZIP de 5 dígitos e ZIP+4.
+US02,CT,G03,O02,Operacional,Necessária,Answered,Uma instalação é considerada próxima quando está a até 25 km da região correspondente ao ZIP informado.
+US02,CT,G04,O03,Operacional,Necessária,Answered,A busca não é executada e o usuário recebe uma mensagem informando que o ZIP não pôde ser reconhecido.
+US02,CT,G05,O04,Operacional,Necessária,Answered,Apenas instalações com cadastro ativo e verificado podem aparecer nos resultados.
+US02,CT,G06,O05,Operacional,Necessária,Answered,"Cada resultado apresenta nome, endereço, distância e tipos de materiais aceitos."
+US02,CT,G07,O06,Operacional,Complementar,Answered,"As instalações são ordenadas pela distância, da mais próxima para a mais distante."
+US02,CT,G08,S01,Sistêmica,Necessária,Answered,O ZIP é convertido em uma localização geográfica por um serviço de geocodificação utilizado pelo sistema.
+US02,CT,G09,S02,Sistêmica,Necessária,Answered,As instalações são obtidas do cadastro de instalações mantido pela plataforma.
+US02,CT,G10,D01,Decisória,Complementar,Answered,Foi decidido utilizar ZIP informado manualmente e não exigir acesso à localização do dispositivo.
+US02,CT,G11,O07,Operacional,Necessária,Answered,O sistema informa que nenhuma instalação próxima foi encontrada e não amplia automaticamente o raio da busca.
+US08,C0,G01,L01,Léxica,Necessária,Open,Estimator é um participante ativo da rodada com permissão para submeter uma estimativa.
+US08,C0,G02,O01,Operacional,Necessária,Open,A condição é satisfeita quando todos os estimadores ativos da rodada possuem uma estimativa registrada.
+US08,C0,G03,O02,Operacional,Necessária,Open,Nenhuma estimativa individual é exibida aos participantes antes da revelação da rodada.
+US08,C0,G04,O03,Operacional,Necessária,Open,A revelação ocorre automaticamente assim que todos os estimadores ativos tiverem submetido uma estimativa.
+US08,C0,G05,O04,Operacional,Necessária,Open,O estimador pode substituir sua estimativa enquanto a rodada ainda não tiver sido revelada.
+US08,C0,G06,O05,Operacional,Necessária,Open,Um estimador que deixar a rodada antes da revelação deixa de ser considerado no conjunto de estimadores ativos.
+US08,C0,G07,O06,Operacional,Necessária,Open,Um único evento de revelação torna o conjunto completo de estimativas disponível para todos os participantes da rodada.
+US08,C0,G08,S01,Sistêmica,Necessária,Open,As estimativas são obtidas do estado da rodada mantido pelo sistema do jogo.
+US08,C0,G09,S02,Sistêmica,Necessária,Open,A lista de estimadores ativos é mantida no estado da sessão do jogo.
+US08,C0,G10,D01,Decisória,Complementar,Open,"Foi decidido que a revelação será acionada automaticamente pelo sistema, em vez de manualmente pelo moderador, para preservar a independência entre as estimativas."
+US08,CL,G01,L01,Léxica,Necessária,Answered,Estimator é um participante ativo da rodada com permissão para submeter uma estimativa.
+US08,CL,G02,O01,Operacional,Necessária,Open,A condição é satisfeita quando todos os estimadores ativos da rodada possuem uma estimativa registrada.
+US08,CL,G03,O02,Operacional,Necessária,Open,Nenhuma estimativa individual é exibida aos participantes antes da revelação da rodada.
+US08,CL,G04,O03,Operacional,Necessária,Open,A revelação ocorre automaticamente assim que todos os estimadores ativos tiverem submetido uma estimativa.
+US08,CL,G05,O04,Operacional,Necessária,Open,O estimador pode substituir sua estimativa enquanto a rodada ainda não tiver sido revelada.
+US08,CL,G06,O05,Operacional,Necessária,Open,Um estimador que deixar a rodada antes da revelação deixa de ser considerado no conjunto de estimadores ativos.
+US08,CL,G07,O06,Operacional,Necessária,Open,Um único evento de revelação torna o conjunto completo de estimativas disponível para todos os participantes da rodada.
+US08,CL,G08,S01,Sistêmica,Necessária,Open,As estimativas são obtidas do estado da rodada mantido pelo sistema do jogo.
+US08,CL,G09,S02,Sistêmica,Necessária,Open,A lista de estimadores ativos é mantida no estado da sessão do jogo.
+US08,CL,G10,D01,Decisória,Complementar,Open,"Foi decidido que a revelação será acionada automaticamente pelo sistema, em vez de manualmente pelo moderador, para preservar a independência entre as estimativas."
+US08,CO,G01,L01,Léxica,Necessária,Open,Estimator é um participante ativo da rodada com permissão para submeter uma estimativa.
+US08,CO,G02,O01,Operacional,Necessária,Answered,A condição é satisfeita quando todos os estimadores ativos da rodada possuem uma estimativa registrada.
+US08,CO,G03,O02,Operacional,Necessária,Answered,Nenhuma estimativa individual é exibida aos participantes antes da revelação da rodada.
+US08,CO,G04,O03,Operacional,Necessária,Answered,A revelação ocorre automaticamente assim que todos os estimadores ativos tiverem submetido uma estimativa.
+US08,CO,G05,O04,Operacional,Necessária,Answered,O estimador pode substituir sua estimativa enquanto a rodada ainda não tiver sido revelada.
+US08,CO,G06,O05,Operacional,Necessária,Answered,Um estimador que deixar a rodada antes da revelação deixa de ser considerado no conjunto de estimadores ativos.
+US08,CO,G07,O06,Operacional,Necessária,Answered,Um único evento de revelação torna o conjunto completo de estimativas disponível para todos os participantes da rodada.
+US08,CO,G08,S01,Sistêmica,Necessária,Open,As estimativas são obtidas do estado da rodada mantido pelo sistema do jogo.
+US08,CO,G09,S02,Sistêmica,Necessária,Open,A lista de estimadores ativos é mantida no estado da sessão do jogo.
+US08,CO,G10,D01,Decisória,Complementar,Open,"Foi decidido que a revelação será acionada automaticamente pelo sistema, em vez de manualmente pelo moderador, para preservar a independência entre as estimativas."
+US08,CD,G01,L01,Léxica,Necessária,Open,Estimator é um participante ativo da rodada com permissão para submeter uma estimativa.
+US08,CD,G02,O01,Operacional,Necessária,Open,A condição é satisfeita quando todos os estimadores ativos da rodada possuem uma estimativa registrada.
+US08,CD,G03,O02,Operacional,Necessária,Open,Nenhuma estimativa individual é exibida aos participantes antes da revelação da rodada.
+US08,CD,G04,O03,Operacional,Necessária,Open,A revelação ocorre automaticamente assim que todos os estimadores ativos tiverem submetido uma estimativa.
+US08,CD,G05,O04,Operacional,Necessária,Open,O estimador pode substituir sua estimativa enquanto a rodada ainda não tiver sido revelada.
+US08,CD,G06,O05,Operacional,Necessária,Open,Um estimador que deixar a rodada antes da revelação deixa de ser considerado no conjunto de estimadores ativos.
+US08,CD,G07,O06,Operacional,Necessária,Open,Um único evento de revelação torna o conjunto completo de estimativas disponível para todos os participantes da rodada.
+US08,CD,G08,S01,Sistêmica,Necessária,Open,As estimativas são obtidas do estado da rodada mantido pelo sistema do jogo.
+US08,CD,G09,S02,Sistêmica,Necessária,Open,A lista de estimadores ativos é mantida no estado da sessão do jogo.
+US08,CD,G10,D01,Decisória,Complementar,Answered,"Foi decidido que a revelação será acionada automaticamente pelo sistema, em vez de manualmente pelo moderador, para preservar a independência entre as estimativas."
+US08,CS,G01,L01,Léxica,Necessária,Open,Estimator é um participante ativo da rodada com permissão para submeter uma estimativa.
+US08,CS,G02,O01,Operacional,Necessária,Open,A condição é satisfeita quando todos os estimadores ativos da rodada possuem uma estimativa registrada.
+US08,CS,G03,O02,Operacional,Necessária,Open,Nenhuma estimativa individual é exibida aos participantes antes da revelação da rodada.
+US08,CS,G04,O03,Operacional,Necessária,Open,A revelação ocorre automaticamente assim que todos os estimadores ativos tiverem submetido uma estimativa.
+US08,CS,G05,O04,Operacional,Necessária,Open,O estimador pode substituir sua estimativa enquanto a rodada ainda não tiver sido revelada.
+US08,CS,G06,O05,Operacional,Necessária,Open,Um estimador que deixar a rodada antes da revelação deixa de ser considerado no conjunto de estimadores ativos.
+US08,CS,G07,O06,Operacional,Necessária,Open,Um único evento de revelação torna o conjunto completo de estimativas disponível para todos os participantes da rodada.
+US08,CS,G08,S01,Sistêmica,Necessária,Answered,As estimativas são obtidas do estado da rodada mantido pelo sistema do jogo.
+US08,CS,G09,S02,Sistêmica,Necessária,Answered,A lista de estimadores ativos é mantida no estado da sessão do jogo.
+US08,CS,G10,D01,Decisória,Complementar,Open,"Foi decidido que a revelação será acionada automaticamente pelo sistema, em vez de manualmente pelo moderador, para preservar a independência entre as estimativas."
+US08,CT,G01,L01,Léxica,Necessária,Answered,Estimator é um participante ativo da rodada com permissão para submeter uma estimativa.
+US08,CT,G02,O01,Operacional,Necessária,Answered,A condição é satisfeita quando todos os estimadores ativos da rodada possuem uma estimativa registrada.
+US08,CT,G03,O02,Operacional,Necessária,Answered,Nenhuma estimativa individual é exibida aos participantes antes da revelação da rodada.
+US08,CT,G04,O03,Operacional,Necessária,Answered,A revelação ocorre automaticamente assim que todos os estimadores ativos tiverem submetido uma estimativa.
+US08,CT,G05,O04,Operacional,Necessária,Answered,O estimador pode substituir sua estimativa enquanto a rodada ainda não tiver sido revelada.
+US08,CT,G06,O05,Operacional,Necessária,Answered,Um estimador que deixar a rodada antes da revelação deixa de ser considerado no conjunto de estimadores ativos.
+US08,CT,G07,O06,Operacional,Necessária,Answered,Um único evento de revelação torna o conjunto completo de estimativas disponível para todos os participantes da rodada.
+US08,CT,G08,S01,Sistêmica,Necessária,Answered,As estimativas são obtidas do estado da rodada mantido pelo sistema do jogo.
+US08,CT,G09,S02,Sistêmica,Necessária,Answered,A lista de estimadores ativos é mantida no estado da sessão do jogo.
+US08,CT,G10,D01,Decisória,Complementar,Answered,"Foi decidido que a revelação será acionada automaticamente pelo sistema, em vez de manualmente pelo moderador, para preservar a independência entre as estimativas."
+US18,C0,G01,L01,Léxica,Necessária,Open,Game é uma sessão de estimativa colaborativa identificada por uma URL própria.
+US18,C0,G02,L02,Léxica,Necessária,Open,Estimator é um participante autorizado a entrar na sessão e fornecer estimativas.
+US18,C0,G03,O01,Operacional,Necessária,Open,O nome deve conter entre 1 e 50 caracteres não compostos exclusivamente por espaços.
+US18,C0,G04,O02,Operacional,Necessária,Open,Dois estimadores ativos não podem utilizar o mesmo nome dentro da mesma sessão.
+US18,C0,G05,O03,Operacional,Necessária,Open,O usuário não entra no jogo e recebe uma mensagem informando que o convite é inválido ou indisponível.
+US18,C0,G06,O04,Operacional,Necessária,Open,O estimador pode entrar enquanto a sessão estiver aberta para participantes.
+US18,C0,G07,O05,Operacional,Necessária,Open,O estimador é adicionado à sessão e direcionado para a página ativa do jogo.
+US18,C0,G08,S01,Sistêmica,Necessária,Open,A URL contém um identificador utilizado pelo sistema para localizar a sessão correspondente.
+US18,C0,G09,S02,Sistêmica,Necessária,Open,A associação entre o estimador e o jogo é registrada no estado da sessão.
+US18,C0,G10,D01,Decisória,Necessária,Open,Foi decidido permitir participação por convite sem exigir criação ou autenticação de uma conta.
+US18,CL,G01,L01,Léxica,Necessária,Answered,Game é uma sessão de estimativa colaborativa identificada por uma URL própria.
+US18,CL,G02,L02,Léxica,Necessária,Answered,Estimator é um participante autorizado a entrar na sessão e fornecer estimativas.
+US18,CL,G03,O01,Operacional,Necessária,Open,O nome deve conter entre 1 e 50 caracteres não compostos exclusivamente por espaços.
+US18,CL,G04,O02,Operacional,Necessária,Open,Dois estimadores ativos não podem utilizar o mesmo nome dentro da mesma sessão.
+US18,CL,G05,O03,Operacional,Necessária,Open,O usuário não entra no jogo e recebe uma mensagem informando que o convite é inválido ou indisponível.
+US18,CL,G06,O04,Operacional,Necessária,Open,O estimador pode entrar enquanto a sessão estiver aberta para participantes.
+US18,CL,G07,O05,Operacional,Necessária,Open,O estimador é adicionado à sessão e direcionado para a página ativa do jogo.
+US18,CL,G08,S01,Sistêmica,Necessária,Open,A URL contém um identificador utilizado pelo sistema para localizar a sessão correspondente.
+US18,CL,G09,S02,Sistêmica,Necessária,Open,A associação entre o estimador e o jogo é registrada no estado da sessão.
+US18,CL,G10,D01,Decisória,Necessária,Open,Foi decidido permitir participação por convite sem exigir criação ou autenticação de uma conta.
+US18,CO,G01,L01,Léxica,Necessária,Open,Game é uma sessão de estimativa colaborativa identificada por uma URL própria.
+US18,CO,G02,L02,Léxica,Necessária,Open,Estimator é um participante autorizado a entrar na sessão e fornecer estimativas.
+US18,CO,G03,O01,Operacional,Necessária,Answered,O nome deve conter entre 1 e 50 caracteres não compostos exclusivamente por espaços.
+US18,CO,G04,O02,Operacional,Necessária,Answered,Dois estimadores ativos não podem utilizar o mesmo nome dentro da mesma sessão.
+US18,CO,G05,O03,Operacional,Necessária,Answered,O usuário não entra no jogo e recebe uma mensagem informando que o convite é inválido ou indisponível.
+US18,CO,G06,O04,Operacional,Necessária,Answered,O estimador pode entrar enquanto a sessão estiver aberta para participantes.
+US18,CO,G07,O05,Operacional,Necessária,Answered,O estimador é adicionado à sessão e direcionado para a página ativa do jogo.
+US18,CO,G08,S01,Sistêmica,Necessária,Open,A URL contém um identificador utilizado pelo sistema para localizar a sessão correspondente.
+US18,CO,G09,S02,Sistêmica,Necessária,Open,A associação entre o estimador e o jogo é registrada no estado da sessão.
+US18,CO,G10,D01,Decisória,Necessária,Open,Foi decidido permitir participação por convite sem exigir criação ou autenticação de uma conta.
+US18,CD,G01,L01,Léxica,Necessária,Open,Game é uma sessão de estimativa colaborativa identificada por uma URL própria.
+US18,CD,G02,L02,Léxica,Necessária,Open,Estimator é um participante autorizado a entrar na sessão e fornecer estimativas.
+US18,CD,G03,O01,Operacional,Necessária,Open,O nome deve conter entre 1 e 50 caracteres não compostos exclusivamente por espaços.
+US18,CD,G04,O02,Operacional,Necessária,Open,Dois estimadores ativos não podem utilizar o mesmo nome dentro da mesma sessão.
+US18,CD,G05,O03,Operacional,Necessária,Open,O usuário não entra no jogo e recebe uma mensagem informando que o convite é inválido ou indisponível.
+US18,CD,G06,O04,Operacional,Necessária,Open,O estimador pode entrar enquanto a sessão estiver aberta para participantes.
+US18,CD,G07,O05,Operacional,Necessária,Open,O estimador é adicionado à sessão e direcionado para a página ativa do jogo.
+US18,CD,G08,S01,Sistêmica,Necessária,Open,A URL contém um identificador utilizado pelo sistema para localizar a sessão correspondente.
+US18,CD,G09,S02,Sistêmica,Necessária,Open,A associação entre o estimador e o jogo é registrada no estado da sessão.
+US18,CD,G10,D01,Decisória,Necessária,Answered,Foi decidido permitir participação por convite sem exigir criação ou autenticação de uma conta.
+US18,CS,G01,L01,Léxica,Necessária,Open,Game é uma sessão de estimativa colaborativa identificada por uma URL própria.
+US18,CS,G02,L02,Léxica,Necessária,Open,Estimator é um participante autorizado a entrar na sessão e fornecer estimativas.
+US18,CS,G03,O01,Operacional,Necessária,Open,O nome deve conter entre 1 e 50 caracteres não compostos exclusivamente por espaços.
+US18,CS,G04,O02,Operacional,Necessária,Open,Dois estimadores ativos não podem utilizar o mesmo nome dentro da mesma sessão.
+US18,CS,G05,O03,Operacional,Necessária,Open,O usuário não entra no jogo e recebe uma mensagem informando que o convite é inválido ou indisponível.
+US18,CS,G06,O04,Operacional,Necessária,Open,O estimador pode entrar enquanto a sessão estiver aberta para participantes.
+US18,CS,G07,O05,Operacional,Necessária,Open,O estimador é adicionado à sessão e direcionado para a página ativa do jogo.
+US18,CS,G08,S01,Sistêmica,Necessária,Answered,A URL contém um identificador utilizado pelo sistema para localizar a sessão correspondente.
+US18,CS,G09,S02,Sistêmica,Necessária,Answered,A associação entre o estimador e o jogo é registrada no estado da sessão.
+US18,CS,G10,D01,Decisória,Necessária,Open,Foi decidido permitir participação por convite sem exigir criação ou autenticação de uma conta.
+US18,CT,G01,L01,Léxica,Necessária,Answered,Game é uma sessão de estimativa colaborativa identificada por uma URL própria.
+US18,CT,G02,L02,Léxica,Necessária,Answered,Estimator é um participante autorizado a entrar na sessão e fornecer estimativas.
+US18,CT,G03,O01,Operacional,Necessária,Answered,O nome deve conter entre 1 e 50 caracteres não compostos exclusivamente por espaços.
+US18,CT,G04,O02,Operacional,Necessária,Answered,Dois estimadores ativos não podem utilizar o mesmo nome dentro da mesma sessão.
+US18,CT,G05,O03,Operacional,Necessária,Answered,O usuário não entra no jogo e recebe uma mensagem informando que o convite é inválido ou indisponível.
+US18,CT,G06,O04,Operacional,Necessária,Answered,O estimador pode entrar enquanto a sessão estiver aberta para participantes.
+US18,CT,G07,O05,Operacional,Necessária,Answered,O estimador é adicionado à sessão e direcionado para a página ativa do jogo.
+US18,CT,G08,S01,Sistêmica,Necessária,Answered,A URL contém um identificador utilizado pelo sistema para localizar a sessão correspondente.
+US18,CT,G09,S02,Sistêmica,Necessária,Answered,A associação entre o estimador e o jogo é registrada no estado da sessão.
+US18,CT,G10,D01,Decisória,Necessária,Answered,Foi decidido permitir participação por convite sem exigir criação ou autenticação de uma conta.
+US25,C0,G01,L01,Léxica,Necessária,Open,Conteúdo recomendado é um item de conteúdo associado a um evento noticioso elegível.
+US25,C0,G02,L02,Léxica,Necessária,Open,News event é um acontecimento noticioso identificado a partir das fontes de notícias cadastradas.
+US25,C0,G03,L03,Léxica,Necessária,Open,A área do usuário corresponde ao município associado ao seu perfil.
+US25,C0,G04,O01,Operacional,Necessária,Open,A relevância é determinada por uma pontuação que combina recência e importância atribuída ao evento.
+US25,C0,G05,O02,Operacional,Necessária,Open,Apenas eventos noticiosos das últimas 24 horas são elegíveis para recomendação.
+US25,C0,G06,O03,Operacional,Complementar,Open,O sistema retorna no máximo dez recomendações.
+US25,C0,G07,O04,Operacional,Necessária,Open,"As recomendações são ordenadas pela pontuação de relevância, da maior para a menor."
+US25,C0,G08,O05,Operacional,Necessária,Open,O sistema informa que não existem recomendações locais disponíveis e não amplia automaticamente a região.
+US25,C0,G09,S01,Sistêmica,Necessária,Open,A área do usuário é obtida do município registrado no serviço de perfil.
+US25,C0,G10,S02,Sistêmica,Necessária,Open,Os eventos são obtidos do serviço de notícias utilizado pela plataforma.
+US25,C0,G11,D01,Decisória,Complementar,Open,Foi decidido utilizar a localização registrada no perfil e não exigir acesso à localização atual do dispositivo.
+US25,CL,G01,L01,Léxica,Necessária,Answered,Conteúdo recomendado é um item de conteúdo associado a um evento noticioso elegível.
+US25,CL,G02,L02,Léxica,Necessária,Answered,News event é um acontecimento noticioso identificado a partir das fontes de notícias cadastradas.
+US25,CL,G03,L03,Léxica,Necessária,Answered,A área do usuário corresponde ao município associado ao seu perfil.
+US25,CL,G04,O01,Operacional,Necessária,Open,A relevância é determinada por uma pontuação que combina recência e importância atribuída ao evento.
+US25,CL,G05,O02,Operacional,Necessária,Open,Apenas eventos noticiosos das últimas 24 horas são elegíveis para recomendação.
+US25,CL,G06,O03,Operacional,Complementar,Open,O sistema retorna no máximo dez recomendações.
+US25,CL,G07,O04,Operacional,Necessária,Open,"As recomendações são ordenadas pela pontuação de relevância, da maior para a menor."
+US25,CL,G08,O05,Operacional,Necessária,Open,O sistema informa que não existem recomendações locais disponíveis e não amplia automaticamente a região.
+US25,CL,G09,S01,Sistêmica,Necessária,Open,A área do usuário é obtida do município registrado no serviço de perfil.
+US25,CL,G10,S02,Sistêmica,Necessária,Open,Os eventos são obtidos do serviço de notícias utilizado pela plataforma.
+US25,CL,G11,D01,Decisória,Complementar,Open,Foi decidido utilizar a localização registrada no perfil e não exigir acesso à localização atual do dispositivo.
+US25,CO,G01,L01,Léxica,Necessária,Open,Conteúdo recomendado é um item de conteúdo associado a um evento noticioso elegível.
+US25,CO,G02,L02,Léxica,Necessária,Open,News event é um acontecimento noticioso identificado a partir das fontes de notícias cadastradas.
+US25,CO,G03,L03,Léxica,Necessária,Open,A área do usuário corresponde ao município associado ao seu perfil.
+US25,CO,G04,O01,Operacional,Necessária,Answered,A relevância é determinada por uma pontuação que combina recência e importância atribuída ao evento.
+US25,CO,G05,O02,Operacional,Necessária,Answered,Apenas eventos noticiosos das últimas 24 horas são elegíveis para recomendação.
+US25,CO,G06,O03,Operacional,Complementar,Answered,O sistema retorna no máximo dez recomendações.
+US25,CO,G07,O04,Operacional,Necessária,Answered,"As recomendações são ordenadas pela pontuação de relevância, da maior para a menor."
+US25,CO,G08,O05,Operacional,Necessária,Answered,O sistema informa que não existem recomendações locais disponíveis e não amplia automaticamente a região.
+US25,CO,G09,S01,Sistêmica,Necessária,Open,A área do usuário é obtida do município registrado no serviço de perfil.
+US25,CO,G10,S02,Sistêmica,Necessária,Open,Os eventos são obtidos do serviço de notícias utilizado pela plataforma.
+US25,CO,G11,D01,Decisória,Complementar,Open,Foi decidido utilizar a localização registrada no perfil e não exigir acesso à localização atual do dispositivo.
+US25,CD,G01,L01,Léxica,Necessária,Open,Conteúdo recomendado é um item de conteúdo associado a um evento noticioso elegível.
+US25,CD,G02,L02,Léxica,Necessária,Open,News event é um acontecimento noticioso identificado a partir das fontes de notícias cadastradas.
+US25,CD,G03,L03,Léxica,Necessária,Open,A área do usuário corresponde ao município associado ao seu perfil.
+US25,CD,G04,O01,Operacional,Necessária,Open,A relevância é determinada por uma pontuação que combina recência e importância atribuída ao evento.
+US25,CD,G05,O02,Operacional,Necessária,Open,Apenas eventos noticiosos das últimas 24 horas são elegíveis para recomendação.
+US25,CD,G06,O03,Operacional,Complementar,Open,O sistema retorna no máximo dez recomendações.
+US25,CD,G07,O04,Operacional,Necessária,Open,"As recomendações são ordenadas pela pontuação de relevância, da maior para a menor."
+US25,CD,G08,O05,Operacional,Necessária,Open,O sistema informa que não existem recomendações locais disponíveis e não amplia automaticamente a região.
+US25,CD,G09,S01,Sistêmica,Necessária,Open,A área do usuário é obtida do município registrado no serviço de perfil.
+US25,CD,G10,S02,Sistêmica,Necessária,Open,Os eventos são obtidos do serviço de notícias utilizado pela plataforma.
+US25,CD,G11,D01,Decisória,Complementar,Answered,Foi decidido utilizar a localização registrada no perfil e não exigir acesso à localização atual do dispositivo.
+US25,CS,G01,L01,Léxica,Necessária,Open,Conteúdo recomendado é um item de conteúdo associado a um evento noticioso elegível.
+US25,CS,G02,L02,Léxica,Necessária,Open,News event é um acontecimento noticioso identificado a partir das fontes de notícias cadastradas.
+US25,CS,G03,L03,Léxica,Necessária,Open,A área do usuário corresponde ao município associado ao seu perfil.
+US25,CS,G04,O01,Operacional,Necessária,Open,A relevância é determinada por uma pontuação que combina recência e importância atribuída ao evento.
+US25,CS,G05,O02,Operacional,Necessária,Open,Apenas eventos noticiosos das últimas 24 horas são elegíveis para recomendação.
+US25,CS,G06,O03,Operacional,Complementar,Open,O sistema retorna no máximo dez recomendações.
+US25,CS,G07,O04,Operacional,Necessária,Open,"As recomendações são ordenadas pela pontuação de relevância, da maior para a menor."
+US25,CS,G08,O05,Operacional,Necessária,Open,O sistema informa que não existem recomendações locais disponíveis e não amplia automaticamente a região.
+US25,CS,G09,S01,Sistêmica,Necessária,Answered,A área do usuário é obtida do município registrado no serviço de perfil.
+US25,CS,G10,S02,Sistêmica,Necessária,Answered,Os eventos são obtidos do serviço de notícias utilizado pela plataforma.
+US25,CS,G11,D01,Decisória,Complementar,Open,Foi decidido utilizar a localização registrada no perfil e não exigir acesso à localização atual do dispositivo.
+US25,CT,G01,L01,Léxica,Necessária,Answered,Conteúdo recomendado é um item de conteúdo associado a um evento noticioso elegível.
+US25,CT,G02,L02,Léxica,Necessária,Answered,News event é um acontecimento noticioso identificado a partir das fontes de notícias cadastradas.
+US25,CT,G03,L03,Léxica,Necessária,Answered,A área do usuário corresponde ao município associado ao seu perfil.
+US25,CT,G04,O01,Operacional,Necessária,Answered,A relevância é determinada por uma pontuação que combina recência e importância atribuída ao evento.
+US25,CT,G05,O02,Operacional,Necessária,Answered,Apenas eventos noticiosos das últimas 24 horas são elegíveis para recomendação.
+US25,CT,G06,O03,Operacional,Complementar,Answered,O sistema retorna no máximo dez recomendações.
+US25,CT,G07,O04,Operacional,Necessária,Answered,"As recomendações são ordenadas pela pontuação de relevância, da maior para a menor."
+US25,CT,G08,O05,Operacional,Necessária,Answered,O sistema informa que não existem recomendações locais disponíveis e não amplia automaticamente a região.
+US25,CT,G09,S01,Sistêmica,Necessária,Answered,A área do usuário é obtida do município registrado no serviço de perfil.
+US25,CT,G10,S02,Sistêmica,Necessária,Answered,Os eventos são obtidos do serviço de notícias utilizado pela plataforma.
+US25,CT,G11,D01,Decisória,Complementar,Answered,Foi decidido utilizar a localização registrada no perfil e não exigir acesso à localização atual do dispositivo.

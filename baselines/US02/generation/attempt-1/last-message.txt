@@ -1,0 +1,4 @@
+Completed:
+
+- `baselines/US02/generation/feature/spec.md`
+- `baselines/US02/generation/feature/checklists/requirements.md`

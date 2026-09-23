@@ -1,0 +1,3 @@
+[NEEDS CLARIFICATION] If an estimator submits an estimate and then leaves the round before reveal, should that estimator’s submitted estimate be excluded from the revealed set because they are no longer active?
+
+[NEEDS CLARIFICATION] If all remaining active estimators have submitted but one or more inactive/left estimators previously submitted estimates, should participants see only active estimators’ estimates or all submitted estimates for the round?

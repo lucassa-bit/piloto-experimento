@@ -1,0 +1,13 @@
+{
+  "run_id": "US02_CO_R3",
+  "user_story_id": "US02",
+  "condition": "CO",
+  "repetition": 3,
+  "baseline_source": "baselines/US02/spec.md",
+  "baseline_sha256": "ee9291c398af0edfda42b8420017355a54df2a71ed3ae1aac38fb014a169a4aa",
+  "user_story_source": "materials/US02/user-story.md",
+  "user_story_sha256": "5e1b66dfeb18e52708677fbf0404808e0383a3045300cb4a387e9c5981b2ace6",
+  "context_source": "materials/US02/operational.md",
+  "context_sha256": "9d03305fd21dc061f1e690cf9bbcf8d28ca0a37c1e433901051d81d48b41e25f",
+  "scaffolded_at": "2026-09-23T12:33:35-03:00"
+}
