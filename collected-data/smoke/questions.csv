@@ -1,5 +1,0 @@
-"run_id","user_story_id","condition","repetition","attempt","question_order","question_text_raw","source_file"
-"SMOKE_C0_R1","SMOKE","C0","1","1","1","[NEEDS CLARIFICATION] What exact order statuses qualify as “ready” for printing, and which statuses must block printing?","last-message.txt"
-"SMOKE_C0_R1","SMOKE","C0","1","1","2","[NEEDS CLARIFICATION] When a packing slip is reprinted, should the system record an audit event, display a “reprint” marker, or limit who can reprint?","last-message.txt"
-"SMOKE_C0_R1","SMOKE","C0","1","1","3","[NEEDS CLARIFICATION] If the printer is unavailable, should the system generate a downloadable/previewable slip, queue the print job, or fail with an error?","last-message.txt"
-"SMOKE_C0_R1","SMOKE","C0","1","1","4","[NEEDS CLARIFICATION] Besides order identifier and item quantities, what item details must appear on the packing slip, such as SKU, item name, location/bin, or barcode?","last-message.txt"

@@ -21,7 +21,7 @@ for _path in (str(SCRIPTS), str(CHECK_OUTPUTS_DIR)):
         sys.path.insert(0, _path)
 
 from lib.io import export_csv, read_utf8  # noqa: E402
-from lib.paths import get_root, questions_csv_path, run_summary_csv_path, runs_dir  # noqa: E402
+from lib.paths import workspace_root, questions_csv_path, run_summary_csv_path, runs_dir  # noqa: E402
 from lib.runs import RUN_DIR_PATTERN  # noqa: E402
 from check_outputs import (  # noqa: E402
     PROTOCOL_VIOLATION,
@@ -315,8 +315,8 @@ def extract_run(
 
 def discover_experimental_run_paths(root: Path | None = None) -> list[Path]:
     """Discover experimental run folders only (never SMOKE_*)."""
-    root = root or get_root()
-    base = runs_dir() if root == get_root() else root / "runs"
+    root = root or workspace_root()
+    base = runs_dir() if root == workspace_root() else root / "runs"
     if not base.is_dir():
         return []
     paths: list[Path] = []
@@ -367,7 +367,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
-        root = get_root()
+        root = workspace_root()
         if args.run_path:
             run_paths = [
                 (root / p).resolve() if not Path(p).is_absolute() else Path(p)
@@ -392,7 +392,7 @@ def main(argv: list[str] | None = None) -> int:
                 for out in (q_default, s_default):
                     out_res = out.resolve()
                     if "smoke" not in out_res.parts and out_res.parent == (
-                        get_root() / "collected-data"
+                        workspace_root() / "collected-data"
                     ).resolve():
                         print(
                             f"Refusing to write SMOKE_* run {path.name} into "

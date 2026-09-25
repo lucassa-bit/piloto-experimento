@@ -1,0 +1,20 @@
+{
+  "integrity_timestamp": "2026-09-23T17:09:27-03:00",
+  "parser_version": 2,
+  "runs": 72,
+  "questions": 269,
+  "specify_version": "1.0.10",
+  "codex_version": "codex-cli 0.156.1",
+  "model": "gpt-5.5",
+  "reasoning_effort": "medium",
+  "sandbox": "read-only",
+  "approval_policy": "never",
+  "sha256": {
+    "collected-data/questions.csv": "1b8d3517f941c3241902e9ebdd3a2f632ded6ba964090554c69e9655da2f5f07",
+    "collected-data/run-summary.csv": "1481ed52e1ccf78cd7661ccfdcfd2beb719a0266b59ed7152469ecf8df6ceb10",
+    "collected-data/outputs-check.csv": "644f3f3944bd74763175db3785a5555f73fd633e93608340252cab312c746c05",
+    "data/Matrizes de rastreabilidade - PRR.xlsx": "896189a746b84ad9ef88448a0b4b895c1549e597e0f494dbe4a74eb07651bda7",
+    "environment/collection-report.md": "e55b1e53813becfd5c1159cca198568b1614b0b0c99363e5e999a57f57934b92"
+  },
+  "notes": "Integrity hashes for audit of the official collection. Do not modify hashed files without updating this record. runs/ is the canonical collection and must not be wiped by scripts."
+}

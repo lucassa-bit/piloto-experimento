@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
 
-BIN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SCRIPTS="$(cd "${BIN}/.." && pwd)"
-ROOT="$(cd "${SCRIPTS}/.." && pwd)"
+clarify_help() {
+  cat <<EOF
+Usage: $(basename "$0")
 
-export CLARIFY_ROOT="${ROOT}"
-export PYTHONPATH="${SCRIPTS}"
+DISABLED for the frozen official collection (baselines/ already present).
+Refuses to regenerate baselines over the scientific collection.
 
-echo "Generating baselines with \$speckit-specify (user-story.md only)..."
-echo "Staging: baselines/<US>/generation/feature"
-echo "Canonical: baselines/<US>/spec.md"
-echo "Root: ${ROOT}"
-echo
+EOF
+  clarify_usage_common
+}
 
-python "${SCRIPTS}/baseline-gen/runner.py" "$@"
-
-echo
-echo "Finished."
-echo "Check baselines/<US>/spec.md and collected-data/baseline-generation.csv"
+clarify_parse_args "$@"
+clarify_export_env
+echo "ERROR: build-baselines is disabled on the official collection (baselines/ frozen)." >&2
+exit 2

@@ -30,7 +30,7 @@ from lib.codex import (
     resolve_codex_executable,
 )
 from lib.io import export_csv, read_metadata, read_utf8, write_metadata, write_utf8
-from lib.paths import collected_dir, execution_table_path, get_root, prompt_path, runs_dir
+from lib.paths import collected_dir, execution_table_path, prompt_path, runs_dir, workspace_root
 from lib.runs import (
     EXPECTED_RUN_COUNT,
     USER_STORY_IDS,
@@ -487,7 +487,7 @@ def build_execution_row(
 
 
 def build_execution_table(root: Path | None = None) -> list[dict[str, object]]:
-    root = root or get_root()
+    root = root or workspace_root()
     rows: list[dict[str, object]] = []
 
     for run in discover_runs(runs_dir()):
@@ -535,7 +535,7 @@ def run_all(
     if attempt != 1:
         pass
 
-    root = (root or get_root()).resolve()
+    root = (root or workspace_root()).resolve()
     prompt_file = prompt_path()
 
     if not runs_dir().is_dir():
@@ -616,6 +616,14 @@ def run_all(
             f"remaining={total_runs - completed_count} | valid={valid_count} | "
             f"failed={failed_count} | violations={violation_count}\n"
         )
+
+        if outcome.status != "Valid":
+            export_execution_table(root, execution_table)
+            raise RuntimeError(
+                f"Technical/protocol failure on {run.run_id} "
+                f"(status={outcome.status}). Stopping collection; no auto-retry. "
+                f"Use scripts/bin/retry-run.sh for an explicit attempt."
+            )
 
     print("\n" + "=" * 50)
     print("EXECUTION FINISHED")
@@ -698,7 +706,7 @@ def main(argv: list[str] | None = None) -> int:
                     file=sys.stderr,
                 )
                 return 2
-            root = get_root().resolve()
+            root = workspace_root().resolve()
             prompt_file = prompt_path()
             if not prompt_file.is_file():
                 raise FileNotFoundError(f"Prompt not found: {prompt_file}")

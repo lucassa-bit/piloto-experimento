@@ -6,8 +6,7 @@ clarify_help() {
   cat <<EOF
 Usage: $(basename "$0")
 
-DISABLED for the frozen official collection.
-scripts never delete or recreate runs/.
+Read-only status of the official collection (runs/, annotation, questions).
 
 EOF
   clarify_usage_common
@@ -15,5 +14,4 @@ EOF
 
 clarify_parse_args "$@"
 clarify_export_env
-echo "ERROR: scaffold-runs is disabled — official runs/ must not be wiped or rebuilt." >&2
-exit 2
+clarify_python -m lib.status_report

@@ -3,5 +3,16 @@
   "annotation_order_seed_sha256": "8827251fa9a947db297473c58cbb64bf243865a18b040506a1f1202dbce7cc4d",
   "blind_item_count": 269,
   "calibration_item_count": 30,
-  "notes": "annotation_order_seed is exclusive to annotation presentation. Never use it in experimental Spec Kit / Codex runs. blind-id-map.csv is private — do not give to evaluators during mapping. Calibration mappings must not be copied into the final annotation."
+  "notes": "Human-only mapping. mapped_gap_ids starts empty. No embeddings/LLM/similarity. Calibration mappings must not be copied into final evaluator sheets.",
+  "scheme": "simple-gap-mapping-v1",
+  "evaluator_fields": [
+    "blind_item_id",
+    "user_story_id",
+    "question_text_raw",
+    "mapped_gap_ids",
+    "notes"
+  ],
+  "calibration_items": 30,
+  "full_items": 269,
+  "auto_classification": false
 }

@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
 
-BIN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SCRIPTS="$(cd "${BIN}/.." && pwd)"
-ROOT="$(cd "${SCRIPTS}/.." && pwd)"
+clarify_help() {
+  cat <<EOF
+Usage: $(basename "$0")
 
-export CLARIFY_ROOT="${ROOT}"
-export PYTHONPATH="${SCRIPTS}"
+Technical check of official runs/ (does not delete or recreate runs).
+Updates collected-data/outputs-check.csv for audit.
 
-echo "Checking outputs existence..."
-echo "Root: ${ROOT}"
-echo
+EOF
+  clarify_usage_common
+}
 
-python "${SCRIPTS}/check-outputs/check_outputs.py"
-
-echo
-echo "Finished."
-echo "Check collected-data/outputs-check.csv"
+clarify_parse_args "$@"
+clarify_export_env
+clarify_guard_integrity
+clarify_log check-outputs \
+  clarify_python "${CLARIFY_SCRIPTS}/check-outputs/check_outputs.py" \
+    --all-experimental \
+    --out "${CLARIFY_REPO}/collected-data/audit/outputs-check.latest.csv"

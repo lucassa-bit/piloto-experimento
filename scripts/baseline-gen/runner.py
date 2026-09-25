@@ -7,6 +7,7 @@ to canonical path; hash metadata. Does not run clarify or scaffold.
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
@@ -46,20 +47,29 @@ from lib.codex import (
     invoke_codex_exec,
     resolve_codex_executable,
 )
-from lib.io import export_csv, read_utf8, write_metadata
+from lib.io import export_csv, import_csv, read_metadata, read_utf8, write_metadata
 from lib.paths import (
     baseline_generation_csv_path,
     baselines_dir,
     collected_dir,
-    get_root,
     materials_dir,
     specify_prompt_path,
+    workspace_root,
 )
 from lib.runs import USER_STORY_IDS
 
 PAUSE_BETWEEN_RUNS_SECONDS = 3
 FEATURE_JSON_PATH = Path(".specify") / "feature.json"
 DEFAULT_BASELINE_SANDBOX = "workspace-write"
+BASELINE_CSV_FIELDS = [
+    "US_ID",
+    "Status",
+    "Start",
+    "End",
+    "Spec_Path",
+    "Checklist_Path",
+    "Error",
+]
 
 
 def parse_user_story_ids(raw: str | None) -> tuple[str, ...]:
@@ -337,6 +347,92 @@ def generate_one_baseline(
         restore_feature_json(root, existed, feature_json)
 
 
+def write_baseline_freeze(root: Path) -> Path:
+    """Record workspace baseline hashes so scaffold verifies against this rerun."""
+    sha = {}
+    for us_id in USER_STORY_IDS:
+        path = canonical_spec_path(root, us_id)
+        if not path.is_file():
+            raise FileNotFoundError(f"Cannot freeze missing baseline: {path}")
+        sha[us_id] = sha256_file(path)
+    payload = {
+        "freeze_timestamp": datetime.now(timezone.utc)
+        .astimezone()
+        .isoformat(timespec="seconds"),
+        "sha256": sha,
+        "notes": (
+            "Baseline freeze for this experiment root. "
+            "Scaffold verifies against these hashes."
+        ),
+    }
+    out = root / "baselines" / "baseline-freeze.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return out
+
+
+def rebuild_baseline_generation_csv(
+    root: Path,
+    session_rows: list[dict[str, object]] | None = None,
+) -> Path:
+    """Write exactly one row per User Story (upsert by US_ID, rebuild from disk)."""
+    by_us: dict[str, dict[str, object]] = {}
+
+    table_path = baseline_generation_csv_path()
+    if table_path.is_file():
+        try:
+            for row in import_csv(table_path):
+                us_id = (row.get("US_ID") or "").strip()
+                if us_id in USER_STORY_IDS:
+                    by_us[us_id] = dict(row)
+        except Exception:  # noqa: BLE001
+            pass
+
+    if session_rows:
+        for row in session_rows:
+            us_id = str(row.get("US_ID") or "").strip()
+            if us_id in USER_STORY_IDS:
+                by_us[us_id] = dict(row)
+
+    for us_id in USER_STORY_IDS:
+        meta = read_metadata(generation_dir(root, us_id) / "metadata.txt")
+        spec = canonical_spec_path(root, us_id)
+        checklist = canonical_checklist_path(root, us_id)
+        if us_id not in by_us:
+            by_us[us_id] = {
+                "US_ID": us_id,
+                "Status": "",
+                "Start": "",
+                "End": "",
+                "Spec_Path": "",
+                "Checklist_Path": "",
+                "Error": "",
+            }
+        row = by_us[us_id]
+        if spec.is_file():
+            row["Spec_Path"] = str(spec)
+            if not row.get("Status") or row["Status"] in ("", "Failed", "Blocked"):
+                row["Status"] = meta.get("Status") or "Valid"
+        if checklist.is_file():
+            row["Checklist_Path"] = str(checklist)
+        if meta.get("Start"):
+            row["Start"] = meta["Start"]
+        if meta.get("End"):
+            row["End"] = meta["End"]
+        if meta.get("Error"):
+            row["Error"] = meta["Error"]
+        if meta.get("Status"):
+            row["Status"] = meta["Status"]
+        row["US_ID"] = us_id
+
+    ordered = [by_us.get(us_id, {"US_ID": us_id, "Status": "Missing"}) for us_id in USER_STORY_IDS]
+    for row in ordered:
+        for key in BASELINE_CSV_FIELDS:
+            row.setdefault(key, "")
+    export_csv(table_path, ordered, fieldnames=BASELINE_CSV_FIELDS)
+    return table_path
+
+
 def run_all(
     *,
     user_story_ids: tuple[str, ...],
@@ -344,7 +440,7 @@ def run_all(
     dry_run: bool,
     root: Path | None = None,
 ) -> list[dict[str, object]]:
-    root = (root or get_root()).resolve()
+    root = (root or workspace_root()).resolve()
     prompt_file = specify_prompt_path()
     user_stories_root = materials_dir()
 
@@ -358,6 +454,7 @@ def run_all(
 
     if not dry_run:
         collected_dir().mkdir(parents=True, exist_ok=True)
+        (collected_dir() / "audit").mkdir(parents=True, exist_ok=True)
         baselines_dir().mkdir(parents=True, exist_ok=True)
         ensure_codex_available()
 
@@ -370,7 +467,7 @@ def run_all(
     failed_count = 0
     blocked_count = 0
 
-    print(f"Root: {root}")
+    print(f"Workspace: {root}")
     print(f"User Stories: {', '.join(user_story_ids)}")
     print(
         f"Model: {EXPERIMENT_MODEL} | Reasoning: {EXPERIMENT_REASONING_EFFORT} | "
@@ -430,9 +527,10 @@ def run_all(
         f"Blocked: {blocked_count} | Failed: {failed_count}"
     )
     if not dry_run:
-        table_path = baseline_generation_csv_path()
-        export_csv(table_path, rows)
-        print(f"Table: {table_path}")
+        table_path = rebuild_baseline_generation_csv(root, rows)
+        print(f"Table: {table_path} ({len(USER_STORY_IDS)} rows expected)")
+        freeze_path = write_baseline_freeze(root)
+        print(f"Baseline freeze: {freeze_path}")
     print("=" * 50)
     return rows
 

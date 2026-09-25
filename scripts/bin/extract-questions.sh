@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
 
-BIN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SCRIPTS="$(cd "${BIN}/.." && pwd)"
-ROOT="$(cd "${SCRIPTS}/.." && pwd)"
+clarify_help() {
+  cat <<EOF
+Usage: $(basename "$0")
 
-export CLARIFY_ROOT="${ROOT}"
-export PYTHONPATH="${SCRIPTS}"
+DISABLED by default: re-extracting would overwrite frozen questions.csv.
+Official questions are already in collected-data/questions.csv.
 
-echo "Extracting questions..."
-echo "Root: ${ROOT}"
-echo
+EOF
+  clarify_usage_common
+}
 
-python "${SCRIPTS}/clarification-processing/extract_questions.py"
-
-echo
-echo "Finished."
-echo "Check collected-data/questions.csv"
+clarify_parse_args "$@"
+clarify_export_env
+echo "ERROR: extract-questions is disabled on the frozen collection (would rewrite questions.csv)." >&2
+exit 2

@@ -15,7 +15,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-from lib.paths import get_root
+from lib.paths import workspace_root
 from lib.runs import (
     CONDITION_CONTEXT_FILES,
     CONDITIONS,
@@ -29,7 +29,8 @@ from lib.runs import (
     validate_run_inputs,
 )
 
-# Frozen baseline SHA-256 (canonical baselines/<US>/spec.md). Divergence → STOP.
+# Official-collection baseline SHA-256 (package root). Isolated reruns use
+# baselines/baseline-freeze.json written after baseline generation.
 FROZEN_BASELINE_SHA256: dict[str, str] = {
     "US02": "ee9291c398af0edfda42b8420017355a54df2a71ed3ae1aac38fb014a169a4aa",
     "US08": "427e858ff781a8a8375a37eedbdaa6ecef127a821c7f2809265ef3116d547a84",
@@ -42,20 +43,31 @@ def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def expected_baseline_hashes(root: Path) -> dict[str, str]:
+    local_freeze = root / "baselines" / "baseline-freeze.json"
+    if local_freeze.is_file():
+        payload = json.loads(local_freeze.read_text(encoding="utf-8"))
+        sha = payload.get("sha256") or payload
+        return {str(k): str(v) for k, v in sha.items()}
+    return dict(FROZEN_BASELINE_SHA256)
+
+
 def verify_frozen_baselines(root: Path) -> None:
-    """Stop immediately if any frozen baseline hash diverges."""
+    """Stop immediately if any baseline hash diverges from this root's freeze."""
+    expected = expected_baseline_hashes(root)
     for us_id in USER_STORY_IDS:
         path = root / "baselines" / us_id / "spec.md"
         if not path.is_file():
-            raise FileNotFoundError(f"Missing frozen baseline: {path}")
+            raise FileNotFoundError(f"Missing baseline: {path}")
         if path.is_symlink():
             raise RuntimeError(f"Baseline must be a physical file, not symlink: {path}")
         digest = sha256_file(path)
-        expected = FROZEN_BASELINE_SHA256[us_id]
-        if digest != expected:
+        if us_id not in expected:
+            raise RuntimeError(f"No expected hash for {us_id} in baseline freeze")
+        if digest != expected[us_id]:
             raise RuntimeError(
                 f"Baseline hash mismatch for {us_id}: got {digest}, "
-                f"expected {expected}. STOP."
+                f"expected {expected[us_id]}. STOP."
             )
 
 
@@ -154,7 +166,7 @@ def scaffold_run(
         )
 
     baseline_digest = sha256_file(baseline_spec)
-    expected_baseline = FROZEN_BASELINE_SHA256[us_id]
+    expected_baseline = expected_baseline_hashes(root)[us_id]
     if baseline_digest != expected_baseline:
         raise RuntimeError(
             f"Baseline hash mismatch for {us_id} while scaffolding {run_path.name}: "
@@ -252,7 +264,7 @@ def scaffold_all(
     dry_run: bool,
     root: Path | None = None,
 ) -> int:
-    root = (root or get_root()).resolve()
+    root = (root or workspace_root()).resolve()
     target_runs_dir = root / "runs"
 
     if repetitions < 1:
@@ -278,8 +290,20 @@ def scaffold_all(
     print()
 
     if clean:
-        removed = _remove_matching_runs(target_runs_dir, dry_run=dry_run)
-        print(f"Cleaned matching run folders: {removed}\n")
+        # Hard stop: never wipe official (or any) runs matrix automatically.
+        existing = []
+        if target_runs_dir.is_dir():
+            existing = [
+                p.name
+                for p in target_runs_dir.iterdir()
+                if p.is_dir() and RUN_DIR_PATTERN.match(p.name)
+            ]
+        if existing:
+            raise RuntimeError(
+                f"--clean refused: {len(existing)} run folders already exist under "
+                f"{target_runs_dir}. Official runs/ must not be deleted by scripts."
+            )
+        print("Clean requested but nothing to remove (runs/ empty of matching IDs)\n")
     elif not force and not dry_run:
         _assert_no_preexisting_runs(target_runs_dir)
 
@@ -347,12 +371,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--clean",
         action="store_true",
-        help="Remove existing US*_COND_R* run folders before recreating them",
+        help=(
+            "FORBIDDEN on the official collection. Refuses if runs/ already has "
+            "experimental folders. Kept only for dry-run planning messages."
+        ),
     )
     parser.add_argument(
         "--force",
         action="store_true",
-        help="Overwrite input files when a run folder already exists (not default)",
+        help="Overwrite inputs inside an existing run folder (does not delete other runs)",
     )
     parser.add_argument(
         "--dry-run",

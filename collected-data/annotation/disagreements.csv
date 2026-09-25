@@ -1,1 +1,1 @@
-"blind_item_id","segment_id","question_text_raw","normalized_need_evaluator_1","normalized_need_evaluator_2","mapped_gap_evaluator_1","mapped_gap_evaluator_2","mapping_status_evaluator_1","mapping_status_evaluator_2","disagree_fields"
+"blind_item_id","user_story_id","question_text_raw","evaluator_1_gap_ids","evaluator_2_gap_ids","final_gap_ids","notes"
