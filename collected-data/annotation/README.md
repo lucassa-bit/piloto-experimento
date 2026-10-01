@@ -3,7 +3,7 @@
 ## O avaliador recebe
 
 1. `evaluator-X.csv` (ou `calibration-evaluator-X.csv`)
-2. `../prr-reference-blind.csv`
+2. `../reference/prr-reference-blind.csv`
 3. este README
 
 ## Para cada pergunta
@@ -17,7 +17,7 @@
 
 - Sem classificação automática / LLM / embeddings.
 - Não alterar `blind_item_id`, `user_story_id`, `question_text_raw`.
-- Não usar `blind-id-map.csv` (privado).
+- Não usar `private/` (blind-id-map, calibration-set, metadata).
 - Não inferir condição experimental nem OPEN/ANSWERED.
 
 ## Pesquisador

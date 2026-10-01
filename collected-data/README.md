@@ -1,17 +1,42 @@
 # collected-data/
 
-## Científico (não sobrescrever sem necessidade)
+## Científico
 
-- `questions.csv`, `run-summary.csv`, `outputs-check.csv`
-- `prr-reference.csv`, `prr-reference-blind.csv`, `prr-gap-states.csv`
-- `annotation/` — folhas humanas
+```text
+questions.csv                 # 269 perguntas observadas
+reference/
+  prr-reference.csv
+  prr-reference-blind.csv     # consulta do avaliador
+  prr-gap-states.csv          # OPEN/ANSWERED por condição
+```
 
-## Auditoria (`audit/`)
+## Anotação humana
 
-Scripts de verificação escrevem aqui:
+```text
+annotation/
+  evaluator-1.csv
+  evaluator-2.csv
+  calibration-evaluator-1.csv
+  calibration-evaluator-2.csv
+  disagreements.csv
+  README.md
+  private/                    # NÃO entregar ao avaliador
+    blind-id-map.csv
+    calibration-set.csv
+    annotation-blind-metadata.json
+```
 
-- `collection-integrity.json` — hashes oficiais
-- `baseline-generation.csv`
-- `preflight-report.md`, `validation-report.md`
-- `outputs-check.latest.csv` — rechecagem (não substitui o CSV congelado)
-- `logs/`
+## Auditoria
+
+```text
+audit/
+  collection-integrity.json   # hashes oficiais
+  run-summary.csv             # auditoria da coleta (não tabela analítica)
+  outputs-check.csv           # auditoria técnica (congelado)
+  baseline-generation.csv
+  preflight-report.md         # opcional
+  validation-report.md        # opcional
+```
+
+Não alterar bytes dos arquivos listados em `audit/collection-integrity.json`
+sem atualizar esse registro.

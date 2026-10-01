@@ -24,6 +24,9 @@ if str(REPO) not in sys.path:
 from lib.io import export_csv, import_csv, write_utf8  # noqa: E402
 from lib.paths import (  # noqa: E402
     annotation_dir,
+    annotation_blind_metadata_path,
+    annotation_private_dir,
+    blind_id_map_path,
     questions_csv_path,
     workspace_root,
 )
@@ -56,7 +59,7 @@ ANNOTATION_README = """# Anotação humana — pergunta → Gap ID
 ## O avaliador recebe
 
 1. `evaluator-X.csv` (ou `calibration-evaluator-X.csv` na calibração)
-2. `../prr-reference-blind.csv`
+2. `../reference/prr-reference-blind.csv`
 3. O README em `collected-data/annotation/README.md`
 
 ## Para cada pergunta
@@ -74,7 +77,7 @@ ANNOTATION_README = """# Anotação humana — pergunta → Gap ID
 
 - Nada é decidido automaticamente (sem LLM, embedding, similaridade ou sugestões).
 - Não altere `blind_item_id`, `user_story_id` ou `question_text_raw`.
-- Não use `blind-id-map.csv` (arquivo privado do pesquisador).
+- Não use `private/blind-id-map.csv` (arquivo privado do pesquisador).
 - Não tente descobrir condição experimental (C0/CL/…).
 """
 
@@ -215,10 +218,11 @@ def prepare_annotation(*, seed: str | None = None) -> dict[str, object]:
     cal = select_calibration(crosswalk, seed=order_seed)
 
     ann = annotation_dir()
-    private = ann / "private"
+    private = annotation_private_dir()
     private.mkdir(parents=True, exist_ok=True)
+    ann.mkdir(parents=True, exist_ok=True)
 
-    export_csv(ann / "blind-id-map.csv", crosswalk, fieldnames=CROSSWALK_FIELDS)
+    export_csv(blind_id_map_path(), crosswalk, fieldnames=CROSSWALK_FIELDS)
     export_csv(private / "calibration-set.csv", cal, fieldnames=CALIBRATION_FIELDS)
 
     cal_ids = {r["blind_item_id"] for r in cal}
@@ -251,10 +255,10 @@ def prepare_annotation(*, seed: str | None = None) -> dict[str, object]:
         "codex_mapping": False,
         "notes": (
             "Human-only mapping. mapped_gap_ids starts empty. "
-            "No embeddings/LLM/similarity. blind-id-map.csv is private."
+            "No embeddings/LLM/similarity. private/blind-id-map.csv is private."
         ),
     }
-    (ann / "annotation-blind-metadata.json").write_text(
+    annotation_blind_metadata_path().write_text(
         json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
 

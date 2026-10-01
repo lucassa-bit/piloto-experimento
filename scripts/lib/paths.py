@@ -1,7 +1,10 @@
 """Repository path helpers.
 
-Default layout: materials/, baselines/, runs/, collected-data/ under the repo.
-Scripts must not wipe official runs/. Audit outputs go under collected-data/audit/.
+Official layout under collected-data/:
+  questions.csv          — scientific observations
+  reference/             — PRR catalogs
+  annotation/            — human sheets (+ private/)
+  audit/                 — integrity + collection audit CSVs
 """
 
 from __future__ import annotations
@@ -25,7 +28,6 @@ def workspace_root() -> Path:
         if not raw:
             continue
         path = Path(raw).resolve()
-        # Ignore stale workspace env pointing at deleted validation dirs.
         if path == repo_root() or (path / "runs").is_dir() or (path / "collected-data").is_dir():
             return path
     return repo_root()
@@ -67,6 +69,10 @@ def audit_dir() -> Path:
     return collected_dir() / "audit"
 
 
+def reference_dir() -> Path:
+    return collected_dir() / "reference"
+
+
 def environment_dir() -> Path:
     return repo_root() / "environment"
 
@@ -76,6 +82,7 @@ def workspace_environment_dir() -> Path:
 
 
 def workspace_logs_dir() -> Path:
+    # Operational logs are not part of the replication package by default.
     return audit_dir() / "logs"
 
 
@@ -88,7 +95,6 @@ def collection_integrity_path() -> Path:
 
 
 def collection_freeze_path() -> Path:
-    """Alias kept for older call sites; integrity lives under audit/."""
     return collection_integrity_path()
 
 
@@ -113,27 +119,39 @@ def questions_csv_path() -> Path:
 
 
 def run_summary_csv_path() -> Path:
-    return collected_dir() / "run-summary.csv"
+    return audit_dir() / "run-summary.csv"
 
 
 def prr_reference_csv_path() -> Path:
-    return collected_dir() / "prr-reference.csv"
+    return reference_dir() / "prr-reference.csv"
 
 
 def prr_reference_blind_csv_path() -> Path:
-    return collected_dir() / "prr-reference-blind.csv"
+    return reference_dir() / "prr-reference-blind.csv"
 
 
 def prr_gap_states_csv_path() -> Path:
-    return collected_dir() / "prr-gap-states.csv"
+    return reference_dir() / "prr-gap-states.csv"
 
 
 def annotation_dir() -> Path:
     return collected_dir() / "annotation"
 
 
+def annotation_private_dir() -> Path:
+    return annotation_dir() / "private"
+
+
+def blind_id_map_path() -> Path:
+    return annotation_private_dir() / "blind-id-map.csv"
+
+
+def annotation_blind_metadata_path() -> Path:
+    return annotation_private_dir() / "annotation-blind-metadata.json"
+
+
 def outputs_check_csv_path() -> Path:
-    return collected_dir() / "outputs-check.csv"
+    return audit_dir() / "outputs-check.csv"
 
 
 def validation_report_path() -> Path:

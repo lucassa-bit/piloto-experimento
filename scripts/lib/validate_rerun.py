@@ -19,6 +19,7 @@ from lib.paths import (  # noqa: E402
     annotation_dir,
     baseline_generation_csv_path,
     baselines_dir,
+    blind_id_map_path,
     materials_dir,
     outputs_check_csv_path,
     prr_gap_states_csv_path,
@@ -147,7 +148,7 @@ def validate_workspace() -> tuple[bool, list[dict[str, object]], str]:
         ann / "evaluator-2.csv",
         ann / "calibration-evaluator-1.csv",
         ann / "calibration-evaluator-2.csv",
-        ann / "blind-id-map.csv",
+        blind_id_map_path(),
     ]
     ann_ok = all(p.is_file() for p in sheets) and prr_reference_blind_csv_path().is_file()
     checks.append(_check("Annotation sheets present", ann_ok))

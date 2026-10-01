@@ -97,12 +97,9 @@ clarify_export_env() {
 clarify_log() {
   local step="$1"
   shift
-  local log_dir="${CLARIFY_REPO}/collected-data/audit/logs"
-  mkdir -p "${log_dir}"
-  local log="${log_dir}/${step}.log"
-  echo ">>> ${step}: $*" | tee -a "${log_dir}/pipeline.log"
-  "$@" 2>&1 | tee -a "${log}" | tee -a "${log_dir}/pipeline.log"
-  return "${PIPESTATUS[0]}"
+  # Operational logs are not part of the scientific package; print only.
+  echo ">>> ${step}: $*"
+  "$@"
 }
 
 clarify_python() {

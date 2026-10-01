@@ -1,0 +1,11 @@
+metric,value
+n_user_stories,4.0
+n_gaps,42.0
+n_runs,72.0
+n_questions,269.0
+direct_agreement,106.0
+adjudicated,163.0
+none_count,66.0
+none_rate,0.24535315985130113
+multi_gap_count,28.0
+gap_run_matrix_rows,756.0

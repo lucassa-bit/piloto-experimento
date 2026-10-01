@@ -1,0 +1,5 @@
+gap_category,open_gaps,recognized_open_gaps,gap_recall,miss_rate
+Decisória,48,3,0.0625,0.9375
+Léxica,84,17,0.20238095238095238,0.7976190476190477
+Operacional,276,115,0.4166666666666667,0.5833333333333333
+Sistêmica,96,12,0.125,0.875

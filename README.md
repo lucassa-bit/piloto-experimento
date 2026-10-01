@@ -11,6 +11,7 @@ Pacote experimental (US02, US08, US18, US25). A coleta oficial em `runs/` está
 ./scripts/bin/check-outputs.sh   # checagem técnica → audit/
 ./scripts/bin/validate-all.sh    # validação estrutural → audit/
 ./scripts/bin/run-all.sh         # preflight + check + validate + status
+./scripts/bin/run-analysis.sh    # análise estatística do piloto (após anotação)
 ./scripts/bin/retry-run.sh --run US02_CO_R2 --attempt 2   # só se necessário
 ```
 
@@ -26,10 +27,13 @@ Entrypoints de **reconstrução** (`prepare-materials`, `build-baselines`,
 | --- | --- |
 | `runs/` | 72 execuções oficiais (não apagar) |
 | `baselines/`, `materials/` | inputs congelados |
-| `collected-data/` | perguntas, PRR CSVs, folhas de anotação |
-| `collected-data/audit/` | integridade + relatórios de verificação |
+| `collected-data/questions.csv` | dado observado (269 perguntas) |
+| `collected-data/reference/` | catálogos PRR |
+| `collected-data/annotation/` | folhas humanas (+ `private/`) |
+| `collected-data/audit/` | integridade + auditoria da coleta |
 | `environment/environment.md` | registro de ambiente |
 | `environment/collection-report.md` | relatório da coleta |
+| `analysis/` | análise descritiva/exploratória do piloto |
 
 ---
 
@@ -37,6 +41,8 @@ Entrypoints de **reconstrução** (`prepare-materials`, `build-baselines`,
 
 Folhas em `collected-data/annotation/` (`mapped_gap_ids` preenchido por humanos).
 Instruções: `collected-data/annotation/README.md`.
+
+Análise estatística (após mapping completo): `analysis/README.md`.
 
 ---
 
